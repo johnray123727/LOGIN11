@@ -1,0 +1,386 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --page-red: #d32f2f;
+    --deep-red: #8e1b1b;
+    --btn-red: #8b1a24;
+    --link-blue: #1a73e8;
+    --text-dark: #222;
+    --dropdown-dark: #1c1c1c;
+    --border-red: #8b1a1a;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+body.login-page {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #c62828;
+}
+
+.page {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 4vw;
+    overflow: hidden;
+}
+
+.orbs {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(180deg, #e53935 0%, #d32f2f 42%, #c62828 100%);
+    overflow: hidden;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.orb-1 {
+    width: min(92vw, 1080px);
+    height: min(92vw, 1080px);
+    left: -22%;
+    top: 52%;
+    transform: translateY(-50%);
+    background: radial-gradient(circle at 46% 42%, rgba(239, 83, 80, 0.95) 0%, rgba(211, 47, 47, 0.55) 46%, rgba(198, 40, 40, 0.12) 68%, transparent 70%);
+    box-shadow: inset 0 0 80px rgba(255, 180, 170, 0.12);
+}
+
+.orb-2 {
+    width: min(62vw, 740px);
+    height: min(62vw, 740px);
+    left: 18%;
+    top: -18%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 150, 140, 0.42) 0%, rgba(229, 57, 53, 0.12) 55%, transparent 72%);
+}
+
+.orb-3 {
+    width: min(58vw, 680px);
+    height: min(58vw, 680px);
+    right: -8%;
+    top: 8%;
+    background: radial-gradient(circle at 40% 40%, rgba(255, 140, 130, 0.38) 0%, rgba(198, 40, 40, 0.1) 58%, transparent 72%);
+}
+
+.orb-4 {
+    width: min(52vw, 620px);
+    height: min(52vw, 620px);
+    right: 8%;
+    bottom: -28%;
+    background: radial-gradient(circle at 50% 40%, rgba(255, 130, 120, 0.36) 0%, rgba(183, 28, 28, 0.12) 58%, transparent 72%);
+}
+
+.orb-5 {
+    width: min(36vw, 420px);
+    height: min(36vw, 420px);
+    left: 38%;
+    bottom: 6%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 160, 150, 0.28) 0%, transparent 70%);
+}
+
+.layout {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1280px;
+    gap: 3rem;
+}
+
+.branding {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding-right: 2rem;
+}
+
+.grc-logo {
+    width: min(520px, 46vw);
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 8px 18px rgba(80, 0, 0, 0.18));
+}
+
+.login-card {
+    flex-shrink: 0;
+    width: min(360px, 100%);
+    background: #fff;
+    border-radius: 18px;
+    padding: 2rem 1.75rem 1.5rem;
+    box-shadow: 0 18px 50px rgba(80, 0, 0, 0.28);
+}
+
+.login-card h1 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.15rem;
+}
+
+.form-group {
+    margin-bottom: 0.85rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.32rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.62rem 1rem;
+    border: 1.5px solid var(--border-red);
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-family: inherit;
+    color: var(--text-dark);
+    outline: none;
+    background: #fff;
+    transition: box-shadow 0.2s;
+}
+
+.form-group input::placeholder {
+    color: #9a9a9a;
+}
+
+.form-group input:focus {
+    box-shadow: 0 0 0 3px rgba(139, 26, 26, 0.12);
+}
+
+.password-field {
+    position: relative;
+}
+
+.password-field input {
+    padding-right: 2.75rem;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0.7rem;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #666;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.password-toggle:hover,
+.password-toggle:focus-visible {
+    color: var(--text-dark);
+}
+
+.password-toggle:focus-visible {
+    outline: 2px solid var(--border-red);
+    outline-offset: 1px;
+}
+
+.password-toggle svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.password-toggle .icon-eye-off,
+.password-toggle.is-visible .icon-eye {
+    display: none;
+}
+
+.password-toggle.is-visible .icon-eye-off {
+    display: block;
+}
+
+.dropdown {
+    position: relative;
+    margin-bottom: 0.95rem;
+}
+
+.dropdown-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.62rem 1rem;
+    background: var(--dropdown-dark);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: left;
+}
+
+.dropdown-toggle svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s;
+}
+
+.dropdown.open .dropdown-toggle svg {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: #f3f3f3;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.dropdown.open .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.65rem 1rem;
+    background: #ececec;
+    border: none;
+    border-bottom: 1px solid #d8d8d8;
+    font-size: 0.88rem;
+    font-family: inherit;
+    color: var(--text-dark);
+    text-align: left;
+    cursor: pointer;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover,
+.dropdown-item.active {
+    background: #dedede;
+}
+
+.btn-login {
+    display: block;
+    width: calc(100% - 2.4rem);
+    margin: 1.05rem auto 0;
+    padding: 0.72rem 1rem;
+    background: var(--btn-red);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-login:hover {
+    background: #6f141c;
+}
+
+.btn-login:active {
+    transform: scale(0.98);
+}
+
+.forgot-description {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: #555;
+    margin: -0.45rem 0 1.05rem;
+}
+
+.success-message {
+    margin-top: 0.35rem;
+    padding: 0.85rem 1rem;
+    border-radius: 14px;
+    background: #e8f5e9;
+    color: #1b5e20;
+    font-size: 0.84rem;
+    line-height: 1.45;
+    text-align: center;
+}
+
+.success-message .forgot-link {
+    margin-top: 0.45rem;
+}
+
+.form-error {
+    margin: 0.15rem 0 0.35rem;
+    font-size: 0.8rem;
+    color: #c62828;
+    text-align: center;
+}
+
+.forgot-link {
+    display: block;
+    text-align: center;
+    margin-top: 0.85rem;
+    font-size: 0.8rem;
+    color: var(--link-blue);
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 860px) {
+    .page {
+        padding: 1.5rem;
+    }
+
+    .layout {
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .branding {
+        padding-right: 0;
+    }
+
+    .grc-logo {
+        width: min(320px, 80vw);
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 360px;
+    }
+}
